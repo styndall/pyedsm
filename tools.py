@@ -18,3 +18,7 @@ def get_star_type(system_name):
 def get_info(system_name):
     call = BASE + system_name + INFO
     return requests.get(call).json().get("information")
+
+def get_all(system_name):
+    call = BASE + system_name + COORDS + STAR_TYPE + INFO + PERMIT
+    return requests.get(call).json()
